@@ -1,0 +1,373 @@
+// 🛠️ RECOMMENDED FREE & OPEN SOURCE TOOLS FOR 2025 (LATEST VERSIONS)
+// 
+// 🚀 FRONTEND FRAMEWORK: Next.js 14.2.x (React 18.3.x based, free, perfect for full-stack apps)
+// 🎨 STYLING: Tailwind CSS 3.4.x (utility-first CSS framework, completely free)
+// 📱 UI COMPONENTS: Shadcn/ui (free, customizable components) + Radix UI (accessible primitives)
+// 🔧 DEVELOPMENT: VS Code (free editor) + TypeScript 5.4.x (type safety)
+// 🌐 HOSTING: Vercel (generous free tier) / Netlify (free tier) / Railway (free tier)
+// 📦 PACKAGE MANAGER: pnpm 8.x (faster, more efficient than npm)
+// 🔒 AUTHENTICATION: NextAuth.js 4.24.x (free, supports Google/Email) + Privy.io (Web3 auth, free tier)
+// 🔐 WEB3: WalletConnect 2.x + Privy SDK (encrypted wallet integration, free)
+// 💾 DATABASE: Supabase (free PostgreSQL, 500MB) or PlanetScale (free MySQL tier)
+// 💳 PAYMENTS: Volet.com (pay-per-transaction, no monthly fees)
+// 🎬 VIDEO: Video.js 8.x or Vidstack Player (free, HLS/DASH support)
+// 📝 RICH TEXT: TipTap 2.x (free, modern WYSIWYG editor)
+// 🔍 SEARCH: MeiliSearch (open source) or Typesense (free tier)
+// 📊 ANALYTICS: Umami Analytics (open source, self-hosted) or Vercel Analytics (free tier)
+// 🎯 ICONS: Lucide React (free, 1000+ icons) + Tabler Icons
+// 🖼️ IMAGES: Next.js Image Optimization + Cloudinary (free tier)
+// 🌸 ANIMATIONS: Framer Motion 11.x (free) + Auto-Animate
+// 📧 EMAIL: Resend (free tier, 100 emails/day) or SendGrid (free tier)
+// 🗄️ STATE: Zustand 4.5.x (lightweight state management)
+// 🔄 REAL-TIME: Pusher (free tier) or Supabase Realtime
+// 📦 CDN: Cloudflare (free tier) or jsDelivr (free, open source)
+// 🛡️ SECURITY: Helmet.js + CORS + Rate limiting
+// 🧪 TESTING: Vitest + React Testing Library (all free)
+// 📱 PWA: next-pwa (Progressive Web App support)
+//
+// 💡 TOTAL COST: $0 for development and small-to-medium scale deployment!
+// 💰 ONLY COSTS: Domain name (~$10-15/year) + Volet transaction fees (2.9% + $0.30)
+// 📁 WULU - Professional Anime Platform with Volet Payments & Web3 Auth
+// Project Structure (Optimized for Free Hosting with Full Features)
+wulu-anime-platform/
+├── .github/
+│   ├── workflows/
+│   │   ├── deploy.yml              # Auto-deploy to Vercel/Netlify
+│   │   ├── test.yml                # Run tests on PR
+│   │   └── lighthouse.yml          # Performance monitoring
+│   └── dependabot.yml              # Automated dependency updates
+│
+├── public/
+│   ├── assets/
+│   │   ├── logo/
+│   │   │   ├── wulu-logo.svg       # Main Wulu logo (vector)
+│   │   │   ├── wulu-logo.png       # PNG versions (multiple sizes)
+│   │   │   ├── wulu-logo-dark.svg  # Dark mode variant
+│   │   │   └── favicon.ico         # Browser favicon
+│   │   │
+│   │   ├── images/
+│   │   │   ├── placeholder-anime.jpg
+│   │   │   ├── placeholder-manga.jpg
+│   │   │   ├── placeholder-user.jpg
+│   │   │   └── og-image.jpg        # Open Graph image
+│   │   │
+│   │   └── animations/
+│   │       └── loading.json         # Lottie animation files
+│   │
+│   ├── fonts/                       # Self-hosted fonts (optional)
+│   ├── manifest.json                # PWA manifest
+│   ├── robots.txt                   # SEO robots file
+│   ├── sitemap.xml                  # SEO sitemap
+│   └── _headers                     # Security headers (Netlify)
+│
+├── src/
+│   ├── app/                         # Next.js 14 App Router
+│   │   ├── (auth)/                  # Auth group layout
+│   │   │   ├── login/
+│   │   │   │   └── page.tsx         # Login page with all auth methods
+│   │   │   ├── register/
+│   │   │   │   └── page.tsx         # Registration page
+│   │   │   └── layout.tsx           # Auth pages layout
+│   │   │
+│   │   ├── (main)/                  # Main app group
+│   │   │   ├── layout.tsx           # Main app layout with header/footer
+│   │   │   ├── page.tsx             # Homepage (simple with logo)
+│   │   │   │
+│   │   │   ├── anime/
+│   │   │   │   ├── page.tsx         # Anime catalog
+│   │   │   │   ├── [slug]/
+│   │   │   │   │   ├── page.tsx     # Anime details
+│   │   │   │   │   └── loading.tsx  # Loading state
+│   │   │   │   └── watch/[id]/
+│   │   │   │       └── page.tsx     # Video player page
+│   │   │   │
+│   │   │   ├── manga/
+│   │   │   │   ├── page.tsx         # Manga catalog
+│   │   │   │   ├── [slug]/
+│   │   │   │   │   └── page.tsx     # Manga details
+│   │   │   │   └── read/[id]/[chapter]/
+│   │   │   │       └── page.tsx     # Manga reader
+│   │   │   │
+│   │   │   ├── marketplace/
+│   │   │   │   ├── page.tsx         # Marketplace home
+│   │   │   │   ├── [productId]/
+│   │   │   │   │   └── page.tsx     # Product details
+│   │   │   │   ├── cart/
+│   │   │   │   │   └── page.tsx     # Shopping cart
+│   │   │   │   └── checkout/
+│   │   │   │       ├── page.tsx     # Checkout with Volet
+│   │   │   │       └── success/
+│   │   │   │           └── page.tsx # Order confirmation
+│   │   │   │
+│   │   │   ├── forum/
+│   │   │   │   ├── page.tsx         # Forum home
+│   │   │   │   ├── create/
+│   │   │   │   │   └── page.tsx     # Create post
+│   │   │   │   ├── [category]/
+│   │   │   │   │   └── page.tsx     # Category view
+│   │   │   │   └── post/[id]/
+│   │   │   │       └── page.tsx     # Thread view
+│   │   │   │
+│   │   │   ├── profile/
+│   │   │   │   ├── page.tsx         # User profile
+│   │   │   │   ├── settings/
+│   │   │   │   │   └── page.tsx     # User settings
+│   │   │   │   └── wallet/
+│   │   │   │       └── page.tsx     # Web3 wallet management
+│   │   │   │
+│   │   │   └── search/
+│   │   │       └── page.tsx         # Search results
+│   │   │
+│   │   ├── api/                     # API Routes
+│   │   │   ├── auth/
+│   │   │   │   ├── [...nextauth]/
+│   │   │   │   │   └── route.ts     # NextAuth endpoints
+│   │   │   │   ├── privy/
+│   │   │   │   │   └── route.ts     # Privy Web3 auth
+│   │   │   │   └── verify-email/
+│   │   │   │       └── route.ts     # Email verification
+│   │   │   │
+│   │   │   ├── anime/
+│   │   │   │   ├── route.ts         # GET anime list
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── route.ts     # GET anime details
+│   │   │   │   └── stream/
+│   │   │   │       └── route.ts     # Stream URL proxy
+│   │   │   │
+│   │   │   ├── manga/
+│   │   │   │   ├── route.ts         # GET manga list
+│   │   │   │   └── [id]/
+│   │   │   │       ├── route.ts     # GET manga details
+│   │   │   │       └── chapters/
+│   │   │   │           └── route.ts # GET chapters
+│   │   │   │
+│   │   │   ├── marketplace/
+│   │   │   │   ├── products/
+│   │   │   │   │   └── route.ts     # Products CRUD
+│   │   │   │   └── orders/
+│   │   │   │       └── route.ts     # Orders management
+│   │   │   │
+│   │   │   ├── payments/
+│   │   │   │   ├── volet/
+│   │   │   │   │   ├── create-session/
+│   │   │   │   │   │   └── route.ts # Create Volet session
+│   │   │   │   │   └── webhook/
+│   │   │   │   │       └── route.ts # Volet webhooks
+│   │   │   │   └── crypto/
+│   │   │   │       └── route.ts     # Crypto payment handler
+│   │   │   │
+│   │   │   ├── forum/
+│   │   │   │   ├── posts/
+│   │   │   │   │   └── route.ts     # Forum posts CRUD
+│   │   │   │   └── comments/
+│   │   │   │       └── route.ts     # Comments CRUD
+│   │   │   │
+│   │   │   ├── search/
+│   │   │   │   └── route.ts         # Search endpoint
+│   │   │   │
+│   │   │   └── upload/
+│   │   │       └── route.ts         # File upload handler
+│   │   │
+│   │   ├── layout.tsx               # Root layout
+│   │   ├── globals.css              # Global styles
+│   │   ├── loading.tsx              # Global loading
+│   │   ├── error.tsx                # Error boundary
+│   │   └── not-found.tsx            # 404 page
+│   │
+│   ├── components/
+│   │   ├── ui/                      # Base UI Components
+│   │   │   ├── button.tsx           # Colorful, eye-catching buttons
+│   │   │   ├── card.tsx             # Card component
+│   │   │   ├── dialog.tsx           # Modal dialogs
+│   │   │   ├── dropdown.tsx         # Dropdown menus
+│   │   │   ├── input.tsx            # Form inputs
+│   │   │   ├── textarea.tsx         # Text areas
+│   │   │   ├── select.tsx           # Select dropdowns
+│   │   │   ├── checkbox.tsx         # Checkboxes
+│   │   │   ├── radio.tsx            # Radio buttons
+│   │   │   ├── switch.tsx           # Toggle switches
+│   │   │   ├── tabs.tsx             # Tab navigation
+│   │   │   ├── toast.tsx            # Toast notifications
+│   │   │   ├── tooltip.tsx          # Tooltips
+│   │   │   ├── badge.tsx            # Status badges
+│   │   │   ├── avatar.tsx           # User avatars
+│   │   │   ├── skeleton.tsx         # Loading skeletons
+│   │   │   ├── spinner.tsx          # Loading spinners
+│   │   │   ├── progress.tsx         # Progress bars
+│   │   │   ├── alert.tsx            # Alert messages
+│   │   │   └── pagination.tsx       # Pagination component
+│   │   │
+│   │   ├── layout/
+│   │   │   ├── header.tsx           # Main header with search
+│   │   │   ├── footer.tsx           # Site footer
+│   │   │   ├── navigation.tsx       # Main navigation
+│   │   │   ├── mobile-menu.tsx      # Mobile hamburger menu
+│   │   │   ├── search-bar.tsx       # Search with 🔎 icon
+│   │   │   ├── user-menu.tsx        # User dropdown menu
+│   │   │   ├── theme-toggle.tsx     # Dark/light mode toggle
+│   │   │   └── scroll-arrows.tsx    # Up/down scroll arrows
+│   │   │
+│   │   ├── auth/
+│   │   │   ├── login-form.tsx       # Email/password login
+│   │   │   ├── register-form.tsx    # Registration form
+│   │   │   ├── google-login.tsx     # Google OAuth button
+│   │   │   ├── web3-login.tsx       # WalletConnect + Privy
+│   │   │   ├── auth-guard.tsx       # Protected route wrapper
+│   │   │   └── wallet-modal.tsx     # Web3 wallet selection
+│   │   │
+│   │   ├── anime/
+│   │   │   ├── anime-card.tsx       # Anime preview card
+│   │   │   ├── anime-grid.tsx       # Responsive grid layout
+│   │   │   ├── anime-carousel.tsx   # Horizontal scroll gallery
+│   │   │   ├── video-player.tsx     # Custom video player
+│   │   │   ├── episode-selector.tsx # Episode navigation
+│   │   │   ├── anime-info.tsx       # Details panel
+│   │   │   ├── rating-system.tsx    # Star ratings
+│   │   │   └── comment-section.tsx  # Comments for logged users
+│   │   │
+│   │   ├── manga/
+│   │   │   ├── manga-card.tsx       # Manga preview card
+│   │   │   ├── manga-grid.tsx       # Manga catalog grid
+│   │   │   ├── manga-reader.tsx     # Reader with zoom/scroll
+│   │   │   ├── chapter-selector.tsx # Chapter navigation
+│   │   │   ├── reader-controls.tsx  # Reader settings panel
+│   │   │   └── reading-progress.tsx # Progress tracker
+│   │   │
+│   │   ├── marketplace/
+│   │   │   ├── product-card.tsx     # Product display card
+│   │   │   ├── product-grid.tsx     # Products grid
+│   │   │   ├── cart-button.tsx      # Add to cart button
+│   │   │   ├── cart-drawer.tsx      # Shopping cart sidebar
+│   │   │   ├── checkout-form.tsx    # Checkout with address
+│   │   │   ├── volet-payment.tsx    # Volet payment button
+│   │   │   ├── crypto-payment.tsx   # Web3 payment option
+│   │   │   └── order-summary.tsx    # Order details
+│   │   │
+│   │   ├── forum/
+│   │   │   ├── post-card.tsx        # Forum post preview
+│   │   │   ├── post-editor.tsx      # TipTap rich text editor
+│   │   │   ├── comment-thread.tsx   # Nested comments
+│   │   │   ├── vote-buttons.tsx     # Upvote/downvote
+│   │   │   ├── user-badge.tsx       # User reputation
+│   │   │   └── category-filter.tsx  # Forum categories
+│   │   │
+│   │   ├── home/
+│   │   │   ├── hero-section.tsx     # Simple hero with logo
+│   │   │   ├── category-bands.tsx   # Anime/Manga/Marketplace
+│   │   │   ├── featured-carousel.tsx # Featured content
+│   │   │   └── quick-links.tsx      # Quick navigation
+│   │   │
+│   │   └── common/
+│   │       ├── seo-head.tsx         # SEO meta tags
+│   │       ├── error-boundary.tsx   # Error handling
+│   │       ├── loading-screen.tsx   # Full page loader
+│   │       ├── infinite-scroll.tsx  # Infinite scrolling
+│   │       └── share-buttons.tsx    # Social sharing
+│   │
+│   ├── lib/
+│   │   ├── auth/
+│   │   │   ├── nextauth-config.ts   # NextAuth.js setup
+│   │   │   ├── privy-config.ts      # Privy SDK setup
+│   │   │   ├── walletconnect.ts     # WalletConnect config
+│   │   │   └── auth-helpers.ts      # Auth utilities
+│   │   │
+│   │   ├── payments/
+│   │   │   ├── volet-client.ts      # Volet SDK wrapper
+│   │   │   ├── payment-utils.ts     # Payment helpers
+│   │   │   └── crypto-payments.ts   # Web3 payment logic
+│   │   │
+│   │   ├── api/
+│   │   │   ├── anime-service.ts     # Anime data fetching
+│   │   │   ├── manga-service.ts     # Manga data fetching
+│   │   │   ├── search-service.ts    # Search implementation
+│   │   │   └── api-client.ts        # API request wrapper
+│   │   │
+│   │   ├── db/
+│   │   │   ├── supabase-client.ts   # Supabase connection
+│   │   │   ├── queries.ts           # Database queries
+│   │   │   └── migrations.ts        # DB migrations
+│   │   │
+│   │   ├── utils/
+│   │   │   ├── constants.ts         # App constants
+│   │   │   ├── helpers.ts           # Helper functions
+│   │   │   ├── validators.ts        # Input validation
+│   │   │   ├── formatters.ts        # Data formatters
+│   │   │   └── encryption.ts        # Data encryption utils
+│   │   │
+│   │   └── config/
+│   │       ├── site.ts              # Site configuration
+│   │       ├── navigation.ts        # Nav structure
+│   │       └── theme.ts             # Theme configuration
+│   │
+│   ├── hooks/
+│   │   ├── use-auth.ts              # Authentication hook
+│   │   ├── use-wallet.ts            # Web3 wallet hook
+│   │   ├── use-cart.ts              # Shopping cart hook
+│   │   ├── use-theme.ts             # Theme management
+│   │   ├── use-search.ts            # Search functionality
+│   │   ├── use-infinite-query.ts    # Infinite scroll data
+│   │   ├── use-local-storage.ts     # Local storage
+│   │   ├── use-debounce.ts          # Debounce hook
+│   │   ├── use-media-query.ts       # Responsive queries
+│   │   └── use-toast.ts             # Toast notifications
+│   │
+│   ├── store/
+│   │   ├── auth-store.ts            # Auth state (Zustand)
+│   │   ├── cart-store.ts            # Cart state
+│   │   ├── theme-store.ts           # Theme preferences
+│   │   ├── search-store.ts          # Search state
+│   │   └── user-store.ts            # User preferences
+│   │
+│   ├── styles/
+│   │   ├── globals.css              # Global styles
+│   │   ├── theme.css                # Theme variables
+│   │   └── animations.css           # Custom animations
+│   │
+│   ├── types/
+│   │   ├── index.d.ts               # Global types
+│   │   ├── anime.types.ts           # Anime interfaces
+│   │   ├── manga.types.ts           # Manga interfaces
+│   │   ├── auth.types.ts            # Auth types
+│   │   ├── marketplace.types.ts     # Product/order types
+│   │   ├── forum.types.ts           # Forum types
+│   │   └── payment.types.ts         # Payment types
+│   │
+│   └── middleware.ts                # Next.js middleware
+│
+├── prisma/                          # Database schema
+│   ├── schema.prisma                # Prisma schema
+│   ├── seed.ts                      # Database seeding
+│   └── migrations/                  # Migration files
+│
+├── tests/
+│   ├── unit/                        # Unit tests
+│   ├── integration/                 # Integration tests
+│   └── e2e/                         # End-to-end tests
+│
+├── scripts/
+│   ├── setup.js                     # Initial setup script
+│   ├── seed-db.js                   # Database seeding
+│   └── generate-sitemap.js          # Sitemap generator
+│
+├── docs/
+│   ├── README.md                    # Main documentation
+│   ├── SETUP.md                     # Setup instructions
+│   ├── DEPLOYMENT.md                # Deployment guide
+│   ├── API.md                       # API documentation
+│   ├── PAYMENTS.md                  # Volet integration guide
+│   ├── WEB3.md                      # Web3 auth guide
+│   └── CONTRIBUTING.md              # Contribution guide
+│
+├── .env.example                     # Environment template
+├── .env.local                       # Local environment
+├── .gitignore                       # Git ignore rules
+├── .eslintrc.json                   # ESLint config
+├── .prettierrc                      # Prettier config
+├── next.config.js                   # Next.js configuration
+├── tailwind.config.ts               # Tailwind configuration
+├── tsconfig.json                    # TypeScript config
+├── package.json                     # Dependencies
+├── pnpm-lock.yaml                   # Lock file
+├── vercel.json                      # Vercel configuration
+├── netlify.toml                     # Netlify configuration
+└── README.md                        # Project README
